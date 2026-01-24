@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nos Services - Viane Tours</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Styles additionnels pour la page services -->
+    <style>
+        :root {
+            --primary: #00B98E;
+            --light: #F6F7F9;
+        }
+        
+        .service-item {
+            box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+            transition: .5s;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(0, 185, 142, .15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 2px dashed var(--primary);
+        }
+        
+        .service-icon i {
+            font-size: 28px;
+            color: var(--primary);
+        }
+        
+        .service-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+            height: 250px;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .banner-service {
+            background: linear-gradient(rgba(14, 46, 80, 0.9), rgba(14, 46, 80, 0.9)), url('img/bus1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+        }
+        
+        /* Style pour les icônes dans "Pourquoi nous choisir" */
+        .icon.bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        /* Style pour les images dans la section "Pourquoi Nous Choisir" */
+        .row.g-0 img.img-fluid.rounded {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin: 5px;
+        }
+        
+        /* Styles pour la galerie d'images */
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+        
+        .gallery-title {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-description {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .gallery-features {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .property-item {
+            box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+            transition: all 0.5s ease;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .property-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0, 185, 142, 0.3);
+        }
+        
+        .position-relative {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .position-relative img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .property-item:hover .position-relative img {
+            transform: scale(1.1);
+            filter: brightness(1.1) contrast(1.05);
+        }
+        
+        /* Effet de lumière au survol */
+        .property-item:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,185,142,0.1) 0%, transparent 50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-features {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .gallery-description {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0 text-primary">Viane Tours & Fils</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Accueil</a>
+                        <a href="service.html" class="nav-item nav-link active">Services</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Banner Start -->
+        <div class="container-fluid banner-service">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4 text-white animated fadeInDown mb-4">Nos Services</h1>
+                        <p class="fs-5 text-white animated fadeInUp mb-4">Découvrez notre gamme complète de services de location de véhicules pour tous vos déplacements au Bénin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+        <!-- Services Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                    <h1 class="section-title mb-3">Services Premium</h1>
+                    <p class="mb-4">Nous mettons à votre disposition une variété de services pour répondre à tous vos besoins de transport, que ce soit pour le tourisme, les affaires ou les événements spéciaux.</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Service 1 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded overflow-hidden">
+                            
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <h4 class="mb-3">Transport Touristique</h4>
+                                <p class="mb-4">Explorez les merveilles du Bénin avec nos guides expérimentés et nos véhicules confortables. Visitez les sites historiques, les parcs nationaux et les villes culturelles en toute sécurité.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Circuits personnalisés</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Guides multilingues</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Itinéraires flexibles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item rounded overflow-hidden">
+                            
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <h4 class="mb-3">Location Longue Durée</h4>
+                                <p class="mb-4">Profitez de tarifs avantageux pour des locations mensuelles ou annuelles. Idéal pour les entreprises, les expatriés et les projets à long terme.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Contrats flexibles</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Entretien inclus</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Assistance 24/7</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item rounded overflow-hidden">
+                            
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4 class="mb-3">Transport de Groupe</h4>
+                                <p class="mb-4">Organisez vos événements, séminaires, mariages ou sorties scolaires avec notre flotte de minibus et bus de 15 à 30 places.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Capacités variées</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Confort optimal</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Chauffeurs professionnels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded overflow-hidden">
+                            
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <h4 class="mb-3">Aventure 4x4</h4>
+                                <p class="mb-4">Partez à l'aventure dans les régions reculées avec nos véhicules 4x4 robustes et fiables. Parfaits pour les safaris et les expéditions.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Véhicules tout-terrain</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Équipement adapté</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Assistance technique</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item rounded overflow-hidden">
+                            
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <h4 class="mb-3">Transfert Aéroport</h4>
+                                <p class="mb-4">Service de transfert professionnel depuis et vers l'aéroport. Ponctualité, confort et service personnalisé garantis.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Service 24h/24</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Suivi vol en direct</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Accueil avec panneau</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item rounded overflow-hidden">
+                            
+                            <div class="service-content">
+                                <div class="service-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h4 class="mb-3">Location avec Chauffeur</h4>
+                                <p class="mb-4">Profitez d'un service VIP avec nos véhicules haut de gamme et nos chauffeurs professionnels. Parfait pour les événements spéciaux et les déplacements d'affaires.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-primary me-2"></i> Chauffeurs expérimentés</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Véhicules de luxe</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i> Service discret</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+        <!-- Lieux à visiter Start -->
+        <div class="container-xxl py-5">
+            
+            <!--Tourisme-->
+            <div class="gallery-section">
+                <div class="gallery-title">
+                    <h1 class="section-title mb-3">Tourisme</h1>
+                </div>
+                <div class="gallery-description">
+                    <h4 class="mb-4">Explorez les merveilles du Bénin avec nos guides expérimentés et nos véhicules confortables. Visitez les sites historiques, les parcs nationaux et les villes culturelles en toute sécurité.</h4>
+                </div>
+                <div class="gallery-features">
+                    Circuits personnalisés &nbsp;&nbsp;&nbsp;Guides multilingues&nbsp;&nbsp;&nbsp;Itinéraires flexibles
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu1.jpeg" alt=""></a> 
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu2.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu3.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu4.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu5.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu6.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu7.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu8.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/lieu9.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Hotel-->
+            <div class="gallery-section"> 
+                <div class="gallery-title">
+                    <h1 class="section-title mb-3">Hôtels et logements</h1> 
+                </div>
+                <div class="gallery-description">
+                    <h4 class="mb-4">Trouvez des logements confortables et bien situés pour vos séjours dans le Bénin. Nos partenaires offrent des services de qualité pour un séjour inoubliable.</h4>
+                </div>
+                <div class="gallery-features">
+                    Hôtels de luxe &nbsp;&nbsp;&nbsp;Appartements en location&nbsp;&nbsp;&nbsp;Services de réservation
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/hotel1.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/hotel2.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/hotel3.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Restaurant-->
+            <div class="gallery-section">   
+                <div class="gallery-title">
+                    <h1 class="section-title mb-3">Restaurants et Gastronomie</h1>  
+                </div>
+                <div class="gallery-description">
+                    <h4 class="mb-4">Découvrez la richesse de la cuisine béninoise avec nos recommandations de restaurants locaux. Goûtez aux plats traditionnels et aux saveurs uniques du Bénin.</h4>
+                </div>
+                <div class="gallery-features">
+                    Cuisine locale &nbsp;&nbsp;&nbsp;Restaurants recommandés&nbsp;&nbsp;&nbsp;Expériences culinaires
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/resto1.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/resto2.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/resto3.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/resto4.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/resto5.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="property-item rounded overflow-hidden">
+                            <div class="position-relative overflow-hidden">
+                                <a href=""><img class="img-fluid" src="img/resto6.jpeg" alt=""></a>    
+                            </div>                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Lieux à visiter End -->
+
+        <!-- Pourquoi Nous Choisir Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="row g-0">
+                            <div class="col-6">
+                                <img class="img-fluid rounded" src="img/bus1.jpg" alt="Avantage 1">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid rounded mt-5" src="img/car3.jpg" alt="Avantage 2">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid rounded mt-5" src="img/car2.jpg" alt="Avantage 3">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid rounded" src="img/bus2.jpg" alt="Avantage 4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">Pourquoi Choisir Viane Tours ?</h1>
+                        <p class="mb-4">Avec plus de 10 ans d'expérience dans le domaine du transport au Bénin, nous nous engageons à vous offrir un service de qualité supérieure.</p>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="icon flex-shrink-0 bg-primary text-white rounded-circle p-2 me-3">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-2">Sécurité Garantie</h5>
+                                        <p class="mb-0">Tous nos véhicules sont régulièrement entretenus et nos chauffeurs sont formés aux techniques de conduite défensive.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="icon flex-shrink-0 bg-primary text-white rounded-circle p-2 me-3">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-2">Assistance 24/7</h5>
+                                        <p class="mb-0">Notre équipe est disponible 24 heures sur 24 pour répondre à vos besoins et résoudre tout problème rapidement.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="icon flex-shrink-0 bg-primary text-white rounded-circle p-2 me-3">
+                                        <i class="fas fa-tags"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-2">Tarifs Compétitifs</h5>
+                                        <p class="mb-0">Nous proposons les meilleurs prix du marché sans compromis sur la qualité du service.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pourquoi Nous Choisir End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Contactez Nous</h5>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+229 01 95 28 29 96 / 01 96 35 62 05</p>
+                        <p class="mb-2"><a href="mailto:tchevekoromeo@gmail.com" class="text-white-50">tchevekoromeo@gmail.com</a></p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Liens rapides</h5>
+                        <a class="btn btn-link text-white-50" href="index.html">Accueil</a>
+                        <a class="btn btn-link text-white-50" href="service.html">Services</a>
+                        <a class="btn btn-link text-white-50" href="contact.html">Nous Contacter</a>
+                        <a class="btn btn-link text-white-50" href="politique.html">Politique de Confidentialité</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Gallerie de Photos</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/bus2.jpg" alt="Bus 30 places">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/car2.jpg" alt="Toyota Prado">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/bus1.jpg" alt="Minibus">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="index.html">Viane Tours & Fils</a>, Tout droit réserver.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="index.html">Accueil</a>
+                                <a href="service.html">Services</a>
+                                <a href="contact.html">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Script simplifié -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifier et gérer les images manquantes
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    console.warn(`Image non trouvée: ${this.src}`);
+                    // Remplacer par une image placeholder
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250"%3E%3Crect width="400" height="250" fill="%2300B98E"/%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="white" font-family="Arial" font-size="18"%3EViane Tours%3C/text%3E%3C/svg%3E';
+                    this.alt = 'Image non disponible';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
